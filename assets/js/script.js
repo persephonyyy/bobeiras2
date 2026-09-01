@@ -6447,7 +6447,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 textoFinal += `${index + 1}. *${nomeBase} - ฿${f.valor.toLocaleString('pt-BR')}*\n`;
             });
 
-            textoFinal += "\nAqui está o link que lhes permite verificar qual é a cada uma das Frutas: https://herikliz.github.io/New-Seas-RPG/akuma-no-mi.html";
+            textoFinal += "\nAqui está o link que lhes permite verificar qual é a cada uma das Frutas: https://persephonyyy.github.io/bobeiras2/";
 
             preResultado.textContent = textoFinal;
             preResultado.style.color = "var(--text-color)";
