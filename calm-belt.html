@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calm Belt - New Seas OP</title>
+    <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn">🎨</button>
+    <div id="sidebar-container"></div>
+
+    <div id="calculadora-rota-container"></div>
+
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">Retrair Tudo</button>
+    </div>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="content-section text-center">
+                <h1 class="title-quantico" style="font-size: 42px; color: var(--accent-color);">CALM BELT</h1>
+            </section>
+
+            <section class="content-section text-center" style="margin-bottom: 40px;">
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="maps-grid">
+                        <div>
+                            <div class="map-title" style="margin-bottom: 10px; font-weight: bold; color: var(--accent-color); font-family: 'Quantico', sans-serif;">Calm Belt (North Blue)</div>
+                            <div class="map-container">
+                                <img src="assets/imagens/Mapas/Calm Belt (North Blue).png" alt="Calm Belt North Blue" style="width: 100%; height: auto; display: block;">
+                                <div class="grid-overlay" data-group="calm-belt-page" data-index="0"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="map-title" style="margin-bottom: 10px; font-weight: bold; color: var(--accent-color); font-family: 'Quantico', sans-serif;">Calm Belt (East Blue)</div>
+                            <div class="map-container">
+                                <img src="assets/imagens/Mapas/Calm Belt (East Blue).png" alt="Calm Belt East Blue" style="width: 100%; height: auto; display: block;">
+                                <div class="grid-overlay" data-group="calm-belt-page" data-index="1"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="map-title" style="margin-bottom: 10px; font-weight: bold; color: var(--accent-color); font-family: 'Quantico', sans-serif;">Calm Belt (West Blue)</div>
+                            <div class="map-container">
+                                <img src="assets/imagens/Mapas/Calm Belt (West Blue).png" alt="Calm Belt West Blue" style="width: 100%; height: auto; display: block;">
+                                <div class="grid-overlay" data-group="calm-belt-page" data-index="2"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="map-title" style="margin-bottom: 10px; font-weight: bold; color: var(--accent-color); font-family: 'Quantico', sans-serif;">Calm Belt (South Blue)</div>
+                            <div class="map-container">
+                                <img src="assets/imagens/Mapas/Calm Belt (South Blue).png" alt="Calm Belt South Blue" style="width: 100%; height: auto; display: block;">
+                                <div class="grid-overlay" data-group="calm-belt-page" data-index="3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" style="max-width: 600px; margin: 0 auto 40px auto; text-align: center;">
+                <div class="input-group">
+                    <label for="island-sorter" style="font-family: 'Quantico', sans-serif; font-size: 18px; color: var(--accent-color); margin-bottom: 10px; display: block;">Organizar Ilhas Por:</label>
+                    <select id="island-sorter" style="width: 100%; padding: 12px; border: 1px solid var(--sidebar-border); border-radius: var(--border-radius); background-color: var(--sidebar-bg); color: var(--text-color); font-family: 'Comfortaa', sans-serif; cursor: pointer; transition: border-color 0.3s ease;">
+                        <option value="alphabetical">Ordem Alfabética</option>
+                        <option value="faction">Afiliação / Organização</option>
+                    </select>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <div id="island-container" data-mar="Calm Belt"></div>
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

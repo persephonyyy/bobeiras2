@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treino - New Seas OP</title>
+    <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn">🎨</button>
+    <div id="sidebar-container"></div>
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">Retrair Tudo</button>
+    </div>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="content-section text-center">
+                <h1 class="title-quantico" style="font-size: 42px; color: var(--accent-color);">TREINOS</h1>
+            </section>
+
+            <section class="content-section intro-text">
+                <p style="margin-bottom: 25px; text-align: center; font-size: 1.1em; line-height: 1.6;">O desenvolvimento dos seus atributos ocorre primariamente através de três métodos de treinamento: <strong>Interação</strong> (1 por semana), <strong>Treino Padrão</strong> (1 por semana) e <strong>Treino de Técnicas</strong> (6 por semana).</p>
+            </section>
+
+            <section class="content-section">
+                <h2 class="toggle-title rank-title">TREINOS ACUMULADOS (TT) <span class="toggle-icon">▼</span></h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px; line-height: 1.6;">Caso o personagem não possua, no momento, nenhuma técnica disponível para treinamento, os treinos realizados poderão ser acumulados para utilização futura. Assim, quando houver técnicas a serem desenvolvidas, elas poderão ser aprendidas por meio do uso de treinos previamente acumulados.</p>
+                    <ul style="margin-left: 40px; margin-bottom: 10px; line-height: 1.6;">
+                        <li style="margin-bottom: 10px;"><strong>Treino Padrão:</strong> Concede 2 treinos acumulados.</li>
+                        <li style="margin-bottom: 10px;"><strong>Interação:</strong> Concede 4 treinos acumulados.</li>
+                        <li style="margin-bottom: 10px;"><strong>Treino de Técnica:</strong> Concede 1 treino acumulado.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="toggle-title rank-title">TREINO PADRÃO <span class="toggle-icon">▼</span></h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px; line-height: 1.6;">Este método de treinamento consiste em descrever de forma livre o seu personagem realizando um treino focado em fortalecer suas capacidades físicas ou mentais.</p>
+                    <ul style="margin-left: 40px; margin-bottom: 25px; line-height: 1.6;">
+                        <li style="margin-bottom: 10px;"><strong>Limite:</strong> 1 por semana.</li>
+                        <li style="margin-bottom: 10px;"><strong>Recompensa:</strong> 250 pontos de atributos | 200 pontos de Haki <strong>OU</strong> Akuma no Mi (se já tiver liberado).</li>
+                        <li style="margin-bottom: 10px;"><strong>Mínimo exigido:</strong> 1.500 caracteres.</li>
+                    </ul>
+
+                    <div class="box-content">
+                        <h3 style="font-family: 'Quantico', sans-serif; font-size: 20px; color: var(--accent-color); margin-bottom: 15px; text-align: center;">Escritor de Treino Padrão</h3>
+                        <textarea class="contador-textarea" data-min-chars="1500" placeholder="Escreva seu treinamento aqui para realizar a contagem de caracteres..." style="min-height: 200px;"></textarea>
+                        
+                        <div class="stats-bar">
+                            <span style="color: var(--text-color);"><span class="scene-paras">0</span> Parágrafos</span>
+                            <span style="display: flex; align-items: center; gap: 5px;">Caracteres: <span class="scene-chars" style="font-size: 20px; color: var(--accent-color);">0</span> <span class="scene-status" style="font-size: 14px;"></span></span>
+                        </div>
+                        
+                        <button class="btn-copiar-contador">Copiar Texto</button>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="toggle-title rank-title">INTERAÇÃO <span class="toggle-icon">▼</span></h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px; line-height: 1.6;">Consiste em interagir com alguém próximo a você, preferencialmente na sua própria ilha. Pode ser realizando qualquer atividade em conjunto: lutando, conversando, trabalhando, etc.</p>
+                    <p style="margin-bottom: 15px; line-height: 1.6;">As interações podem ser feitas quantas vezes quiser durante a semana, porém <strong>a recompensa só pode ser recebida 1 vez por semana</strong>. Você não é obrigado a terminar em pouco tempo — se começar numa semana, pode terminar em outra, mas só adicione os pontos na ficha após concluir toda a interação.</p>
+                    
+                    <ul style="margin-left: 40px; margin-bottom: 25px; line-height: 1.6;">
+                        <li style="margin-bottom: 10px;"><strong>Mínimo exigido:</strong> 300 caracteres <strong>por cena</strong>.</li>
+                        <li style="margin-bottom: 10px;"><strong>Jogador × Jogador (10 cenas de cada):</strong> 300 pontos de atributo | 250 pontos de Haki <strong>OU</strong> Akuma no Mi (se já tiver liberado).</li>
+                        <li style="margin-bottom: 10px;"><strong>Jogador × NPC Especial (10 cenas de cada):</strong> 100 pontos de atributo | 100 pontos de Haki <strong>OU</strong> Akuma no Mi (se já tiver liberado).</li>
+                        <li style="margin-bottom: 10px;"><strong>Jogador × Jogador (5 cenas de cada):</strong> 150 pontos de atributo | 125 pontos de Haki <strong>OU</strong> Akuma no Mi (se já tiver liberado).</li>
+                        <li style="margin-bottom: 10px;"><strong>Jogador × NPC Especial (5 cenas de cada):</strong> 50 pontos de atributo | 50 pontos de Haki <strong>OU</strong> Akuma no Mi (se já tiver liberado).</li>
+                    </ul>
+
+                    <div class="box-content">
+                        <h3 style="font-family: 'Quantico', sans-serif; font-size: 20px; color: var(--accent-color); margin-bottom: 15px; text-align: center;">Escritor de Cena de Interação</h3>
+                        <textarea class="contador-textarea" data-min-chars="300" placeholder="Escreva seu turno de interação aqui..." style="min-height: 200px;"></textarea>
+                        
+                        <div class="stats-bar">
+                            <span style="color: var(--text-color);"><span class="scene-paras">0</span> Parágrafos</span>
+                            <span style="display: flex; align-items: center; gap: 5px;">Caracteres: <span class="scene-chars" style="font-size: 20px; color: var(--accent-color);">0</span> <span class="scene-status" style="font-size: 14px;"></span></span>
+                        </div>
+                        
+                        <button class="btn-copiar-contador">Copiar Texto</button>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="border: 1px solid var(--sidebar-border); margin: 40px 0;">
+
+            <section class="content-section">
+                <h2 class="toggle-title rank-title">TREINO DE TÉCNICAS <span class="toggle-icon">▼</span></h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px; line-height: 1.6;">Dedicado ao desbloqueio de técnicas e estilos de luta. Consiste em descrever o seu personagem efetuando o treinamento daquela técnica específica.</p>
+                    
+                    <ul style="margin-left: 40px; margin-bottom: 25px; line-height: 1.6;">
+                        <li style="margin-bottom: 10px;"><strong>Limite:</strong> 6 por semana.</li>
+                        <li style="margin-bottom: 10px;"><strong>Recompensa:</strong> 25 pontos de atributo | 20 pontos de Haki <strong>OU</strong> Akuma no Mi (se já tiver liberado).</li>
+                        <li style="margin-bottom: 10px;"><strong>Mínimo exigido:</strong> 360 caracteres.</li>
+                    </ul>
+
+                    <div class="box-content">
+                        <h3 style="font-family: 'Quantico', sans-serif; font-size: 20px; color: var(--accent-color); margin-bottom: 15px; text-align: center;">Escritor de Treino de Técnicas</h3>
+                        <textarea class="contador-textarea" data-min-chars="360" placeholder="Escreva seu treino de técnica aqui..." style="min-height: 200px;"></textarea>
+                        
+                        <div class="stats-bar">
+                            <span style="color: var(--text-color);"><span class="scene-paras">0</span> Parágrafos</span>
+                            <span style="display: flex; align-items: center; gap: 5px;">Caracteres: <span class="scene-chars" style="font-size: 20px; color: var(--accent-color);">0</span> <span class="scene-status" style="font-size: 14px;"></span></span>
+                        </div>
+                        
+                        <button class="btn-copiar-contador">Copiar Texto</button>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

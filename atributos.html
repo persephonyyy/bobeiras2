@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atributos - New Seas OP</title>
+    <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn">⚖️</button>
+    <div id="sidebar-container"></div>
+
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">Retrair Tudo</button>
+    </div>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="content-section text-center">
+                <div class="wg-emblem">📊</div>
+                <h1 class="title-quantico" style="color: var(--accent-color); font-size: 42px;">ATRIBUTOS</h1>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    Atributos Ofensivos e Energia <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <h3 style="color: var(--accent-color); font-family: 'Quantico', sans-serif; font-size: 24px; margin-bottom: 10px;">DESTREZA</h3>
+                    <p style="margin-bottom: 20px;">Destreza é a medida de precisão, coordenação e habilidade com armas (corte, perfuração ou disparo). Esse atributo define o dano de ataques baseados nestas armas. Para <strong>Atiradores</strong>, serve como base principal para dano e eficiência técnica.</p>
+                    <ul style="margin-left: 20px; margin-bottom: 25px;">
+                        <li style="margin-bottom: 8px;">O Dano Bruto é calculado a partir do seu atributo dominante (Força ou Destreza) somado aos buffs ativos.</li>
+                        <li style="margin-bottom: 8px;">A cada <strong>1.000 pontos em Destreza</strong>, o personagem adquire <strong>5m² de capacidade destrutiva ambiental</strong> (cortar/perfurar estruturas).</li>
+                    </ul>
+
+                    <h3 style="color: var(--accent-color); font-family: 'Quantico', sans-serif; font-size: 24px; margin-bottom: 10px;">FORÇA</h3>
+                    <p style="margin-bottom: 20px;">Representa o poder físico bruto. Utilizada em ataques corpo a corpo, impactos diretos, arremessos, rompimento de estruturas e disputas físicas (agarrões, empurrões e ondas de impacto).</p>
+                    <ul style="margin-left: 20px; margin-bottom: 25px;">
+                        <li style="margin-bottom: 8px;">Pode ser o atributo dominante no cálculo de dano bruto (junto com os buffs).</li>
+                        <li style="margin-bottom: 8px;">A cada <strong>1.000 pontos em Força</strong>, adquire <strong>5m² de capacidade destrutiva ambiental</strong> através de impacto direto.</li>
+                    </ul>
+
+                    <h3 style="color: var(--accent-color); font-family: 'Quantico', sans-serif; font-size: 24px; margin-bottom: 10px;">ESPÍRITO</h3>
+                    <p style="margin-bottom: 15px;">É a fonte da sua força interior, relacionada diretamente ao uso e controle dos três tipos de Haki (Armamento, Observação e Rei). Os pontos de Espírito são distribuídos entre essas categorias para definir a profundidade do seu domínio. Só é possível investir pontos após o despertar do Haki respectivo.</p>
+
+                    <div class="calc-box" style="margin-top: 30px;">
+                        <h4 style="text-align: center; font-family: 'Quantico'; font-size: 24px; margin-bottom: 20px; color: var(--accent-color);">Calculadora de Capacidade Destrutiva</h4>
+                        
+                        <div class="input-group">
+                            <label>Pontos de Força ou Destreza (Total com buffs):</label>
+                            <input type="text" id="destruicao-pontos" class="auto-calc" placeholder="Ex: 5.000">
+                        </div>
+                        
+                        <div class="result-display" style="background-color: transparent; color: var(--text-color); border: 2px solid var(--sidebar-border); box-shadow: none;">
+                            Capacidade Destrutiva Ambiental: <span id="out-destruicao" style="color: #ff5722; font-weight: bold; font-size: 24px;">0</span>m²
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    Resistência e Vitalidade <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">A Resistência representa a durabilidade do corpo e a capacidade de suportar dano e esforço. Ela está ligada ao <strong>HP (Pontos de Vida)</strong> e atua como uma armadura passiva natural.</p>
+                    
+                    <ul style="margin-left: 20px; margin-bottom: 25px;">
+                        <li style="margin-bottom: 8px;"><strong>HP Total:</strong> Calculado apenas com a Resistência Passiva (sem buffs ativos, apenas passivos). O cálculo é: <strong>(Resistência * Multiplicador) + 10.000</strong>. O Multiplicador depende do total de pontos da ficha inteira: 1.5 (até 9.999), 2.0 (10.000 a 19.999), 3.0 (20.000 a 39.999) e 4.0 (40.000+).</li>
+                        <li style="margin-bottom: 8px;"><strong>Redução de Dano:</strong> O dano não é ignorado, mas reduzido. Quanto maior a resistência (incluindo buffs ativos), menor o dano final sofrido. 25.000 de Resistência corta o dano recebido exatamente pela metade.</li>
+                    </ul>
+
+                    <div class="calc-box">
+                        <h4 style="text-align: center; font-family: 'Quantico'; font-size: 24px; margin-bottom: 20px; color: var(--accent-color);">Calculadora de HP e Dano</h4>
+                        
+                        <div style="border-bottom: 1px dashed var(--accent-color); padding-bottom: 20px; margin-bottom: 20px;">
+                            <div class="input-group">
+                                <label>Pontos Totais da Ficha:</label>
+                                <input type="text" id="hp-pontos-totais" class="auto-calc" placeholder="Ex: 15.000">
+                            </div>
+                            <div class="input-group">
+                                <label>Resistência Passiva (Para calcular HP):</label>
+                                <input type="text" id="hp-res-passiva" class="auto-calc" placeholder="Ex: 5.000">
+                            </div>
+                            <div class="result-display" style="background-color: transparent; color: var(--text-color); border: 2px solid var(--sidebar-border); box-shadow: none;">
+                                HP Total: <span id="out-hp" style="font-weight: bold; color: var(--accent-color);">10.000</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="input-group">
+                                <label>Dano Bruto do Ataque:</label>
+                                <input type="text" id="dmg-bruto" class="auto-calc" placeholder="Ex: 20.000">
+                            </div>
+                            <div class="input-group">
+                                <label>Resistência Total do Alvo:</label>
+                                <input type="text" id="dmg-res-total" class="auto-calc" placeholder="Ex: 15.000">
+                            </div>
+                            <div class="result-display">
+                                Dano Final: <span id="out-dano-final">0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    Velocidade e Movimentação <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">A <strong>Velocidade</strong> é um atributo tático essencial, dividido em duas subcategorias funcionais no sistema:</p>
+
+                    <div class="sub-attr">
+                        <h3>REFLEXO</h3>
+                        <p style="margin-bottom: 10px;">Mede sua capacidade de perceber e reagir a ataques e eventos. Um Reflexo alto ajuda a antecipar ações inimigas e evita que o personagem seja pego desprevenido.</p>
+                        <p>É a chave principal para <strong>esquivas baseadas em percepção</strong>. Notar o golpe a tempo define a diferença entre levar o dano ou escapar.</p>
+                    </div>
+
+                    <div class="sub-attr">
+                        <h3>VELOCIDADE CORPORAL</h3>
+                        <p style="margin-bottom: 10px;">Determina o quão rápido você se movimenta fisicamente do ponto A ao ponto B (avanços, recuos e reposicionamentos).</p>
+                        <p style="margin-bottom: 15px;">Quem tem <strong>0 de Velocidade Corporal</strong> se move a <strong>5 m/s</strong>. A cada <strong>100 pontos investidos</strong>, a velocidade aumenta em <strong>1 m/s</strong>.</p>
+                        
+                        <div class="calc-box" style="margin-top: 20px;">
+                            <h4 style="text-align: center; font-family: 'Quantico'; font-size: 24px; margin-bottom: 20px; color: var(--accent-color);">Calculadora de Velocidade</h4>
+                            
+                            <div class="input-group">
+                                <label>Pontos de Velocidade Corporal:</label>
+                                <input type="text" id="vel-corp-pontos" class="auto-calc" placeholder="Ex: 5.000">
+                            </div>
+
+                            <div class="input-group">
+                                <label>Distância a Percorrer (Metros):</label>
+                                <input type="text" id="vel-distancia" class="auto-calc" placeholder="Ex: 125">
+                            </div>
+                            
+                            <div class="result-display" style="display: flex; flex-direction: column; gap: 10px; background-color: transparent; color: var(--text-color); border: 2px solid var(--sidebar-border); box-shadow: none; text-align: left;">
+                                <div><span style="color: var(--accent-color); font-weight: bold;">Metros por segundo:</span> <span id="out-vel-ms">5</span> m/s</div>
+                                <div><span style="color: var(--accent-color); font-weight: bold;">Quilômetros por hora:</span> <span id="out-vel-kmh">18</span> km/h</div>
+                                <div><span style="color: var(--accent-color); font-weight: bold;">Velocidade do Som:</span> <span id="out-vel-mach">0.01</span> Mach</div>
+                                <div><span style="color: var(--accent-color); font-weight: bold;">Tempo Estimado:</span> <span id="out-vel-tempo">0 segundos</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    Esquiva e Diferença de Velocidade <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">A esquiva não é automática nem puramente narrativa. É baseada na diferença percentual entre a <strong>Velocidade do Ataque</strong> (Velocidade Corporal do inimigo ou Velocidade do Projétil) e o <strong>Reflexo do Defensor</strong>.</p>
+
+                    <div class="calc-box">
+                        <h4 style="text-align: center; font-family: 'Quantico'; font-size: 24px; margin-bottom: 20px; color: var(--accent-color);">Simulador de Esquiva</h4>
+                        
+                        <div class="input-group">
+                            <label>Velocidade do Ataque ou Projétil (Atacante):</label>
+                            <input type="text" id="esq-atk" class="auto-calc" placeholder="Ex: 15.000">
+                        </div>
+                        <div class="input-group">
+                            <label>Reflexo (Defensor):</label>
+                            <input type="text" id="esq-def" class="auto-calc" placeholder="Ex: 12.000">
+                        </div>
+                        
+                        <div class="result-display" style="padding: 20px;">
+                            <div style="font-size: 16px; margin-bottom: 10px;">Diferença: <span id="out-esq-perc" style="color: #ffeb3b; font-size: 22px;">0%</span></div>
+                            <div id="out-esq-status" style="font-size: 18px; line-height: 1.4;">Igualdade ou Valores Parelhos. O combate é equilibrado.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    Projéteis e Armas <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">A velocidade e o alcance de ataques com armas dependem do atributo principal (<strong>Força ou Destreza</strong>) investido e do tipo de armamento escolhido. Utilize o painel abaixo para encontrar as capacidades exatas do seu armamento.</p>
+
+                    <div class="calc-box">
+                        <h4 style="text-align: center; font-family: 'Quantico'; font-size: 24px; margin-bottom: 20px; color: var(--accent-color);">Calculadora de Alcance e Velocidade</h4>
+                        
+                        <div class="input-group">
+                            <label>Atributo Total (Força ou Destreza + Buffs):</label>
+                            <input type="text" id="proj-attr" class="auto-calc" placeholder="Ex: 8.000">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>Tipo de Arma/Ataque:</label>
+                            <select id="proj-tipo" class="auto-calc">
+                                <option value="forca">Armas baseadas em Força (Martelos, Socos de Pressão)</option>
+                                <option value="corte">Armas de Destreza - Corte (Katanas, Foices)</option>
+                                <option value="arco">Destreza - Disparo (Arcos, Bestas, Estilingues)</option>
+                                <option value="fogo">Destreza - Disparo (Armas de Fogo)</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group" id="container-classe" style="display: none;">
+                            <label>Classe do Personagem:</label>
+                            <select id="proj-classe" class="auto-calc">
+                                <option value="atirador">Atirador</option>
+                                <option value="nao-atirador">Não-Atirador</option>
+                            </select>
+                        </div>
+
+                        <div class="result-display" style="display: flex; flex-direction: column; gap: 10px;">
+                            <div>Velocidade do Ataque: <span id="out-proj-vel" style="color: #ffeb3b;">0</span> pontos</div>
+                            <div>Alcance Máximo: <span id="out-proj-dist" style="color: #03a9f4;">0</span>m</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    Avisos e Regras Gerais <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <ul style="margin-left: 20px; line-height: 1.6;">
+                        <li style="margin-bottom: 15px;">
+                            <strong>Limite e Acúmulo de Buffs:</strong> O sistema divide os bônus em três categorias, cada uma com o limite máximo de <strong>+100%</strong>: buffs passivos (de raça), buffs ativos (técnicas próprias) e buffs externos (de outras pessoas ou de armas, que dividem o mesmo espaço). Em vez de somar tudo de uma vez, eles são aplicados em etapas sobre o valor anterior. Por exemplo, 1.000 pontos base com 15% passivo viram 1.150; adicionando 30% de um ativo próprio, o cálculo é feito sobre os 1.150, chegando a 1.495; e por fim, um buff de 30% vindo de armas ou terceiros incide sobre os 1.495, resultando em 1.943 pontos finais.
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <strong>Sobreposição em Velocidade:</strong> Velocidade <strong>NÃO</strong> acumula buffs próprios simultâneos. É impossível ter mais de um buff ativo em Velocidade ao mesmo tempo (prevalece o maior), a menos que as técnicas sejam explicitamente criadas para se complementarem.
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <strong>Limites de Atributo e Barreiras de Pontos:</strong> Os limites de pontos que um personagem pode atingir natural ou narrativamente variam de acordo com o Mar em que ele se encontra. Consulte a página <a href="geografia.html">Geografia</a> para conferir a barreira exata do seu oceano atual.
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <strong>Distribuição de Pontos (Jogadores com 40.000+ pontos):</strong> Para jogadores que já atingiram 40.000 pontos base ou mais, todos os pontos recebidos devem ser alocados livremente entre Haki ou Akuma no Mi, da forma que o jogador preferir. Por exemplo: se em uma recompensa o ganho total for de 450 pontos, o jogador pode colocar 400 em Haki e 50 em Akuma no Mi, ou os 450 inteiros em Akuma no Mi, sem poder adicionar aos pontos normais de atributo. Caso o jogador com mais de 40.000 não possua Haki nem Akuma no Mi, esses pontos serão perdidos.
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <strong>Pontos Livres:</strong> Representam uma pontuação versátil que você pode alocar onde bem entender, oferecendo total flexibilidade de distribuição. Eles podem ser colocados tanto nos atributos convencionais do personagem quanto em Espírito ou Akuma no Mi.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

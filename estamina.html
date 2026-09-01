@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estamina - New Seas OP</title>
+    <link href="https://fonts.googleapis.com/css?family=Quantico:700|Comfortaa:400,700|Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn">🎨</button>
+    <div id="sidebar-container"></div>
+    <div style="position: fixed; bottom: 80px; right: 20px; z-index: 9999;">
+        <button id="toggle-all-btn" class="copy-btn" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">Retrair Tudo</button>
+    </div>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <section class="content-section text-center">
+                <h1 class="title-quantico" style="color: var(--accent-color); font-size: 42px;">ESTAMINA</h1>
+            </section>
+            
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    O que é Estamina? <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">A <strong>Estamina</strong> é um atributo que define o quanto seu personagem consegue suportar uma batalha sem se cansar. É importante lembrar que Estamina é diferente de Resistência. Resistência se refere a quanto dano físico seu personagem consegue absorver, enquanto Estamina representa sua capacidade de aguentar uma luta prolongada sem perder o fôlego.</p>
+                    <p style="margin-bottom: 15px;">Este sistema é simples: para cada ponto de Resistência Geral, o personagem ganha cinco pontos de Estamina. Assim, a Estamina do personagem sempre será o quíntuplo de sua Resistência, considerando todos os buffs passivos, como aqueles de raça.</p>
+                    <div class="math-box">
+                        <p><strong>Por exemplo:</strong> se o personagem tem 1.000 pontos de Resistência base e recebe um buff de raça de +5%, ele terá 1.050 de Resistência, o que resulta em 5.250 pontos de Estamina.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    Gastos de Estamina <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <p style="margin-bottom: 15px;">O sistema somará os buffs, danos e a velocidade utilizada em uma ação e subtrairá esses valores da Estamina total, fazendo com que o personagem se canse mais rapidamente em combate prolongado ou ao usar muitas técnicas. Veja os exemplos:</p>
+                    
+                    <div class="sub-attr">
+                        <h3 class="toggle-title">Estamina Gasta para Buffs <span class="toggle-icon">▼</span></h3>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 10px;">150 de Estamina são gastos para cada 10% de buff utilizado. Se você usar uma técnica que concede +30% de buff, você gastará 450 de Estamina.</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-attr">
+                        <h3 class="toggle-title">Estamina Gasta por Velocidade <span class="toggle-icon">▼</span></h3>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 10px;">10% da velocidade total do movimento é descontada da Estamina. Por exemplo: se o personagem alcança 5.000 de Velocidade Corporal (considerando todos os buffs), ele gasta 10% disso em Estamina, ou seja, 500.</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-attr">
+                        <h3 class="toggle-title">Estamina Gasta por Dano <span class="toggle-icon">▼</span></h3>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 10px;">10% do dano total causado é descontado da Estamina. Se você causar 10.000 de dano em um ataque, considerando todos os buffs, 10% disso será subtraído da Estamina (1.000).</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    Recuperação e Exaustão <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <div class="sub-attr">
+                        <h3 class="toggle-title">Recuperação de Vigor <span class="toggle-icon">▼</span></h3>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 10px;">A cada cena em movimento, o personagem recupera 10% da Estamina total; em repouso total, recupera +30% da Estamina total.</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-attr">
+                        <h3 class="toggle-title">Exaustão Completa <span class="toggle-icon">▼</span></h3>
+                        <div class="toggle-content">
+                            <p style="margin-bottom: 10px;">Ao chegar a zero de Estamina, o personagem não poderá se regenerar em movimento, ficando limitado a descansar para se recuperar. Nesse estado, ele perde -20% de todos os atributos por turno até descansar.</p>
+                            <p style="margin-bottom: 10px;">Caso o personagem fique em Exaustão Completa por 2 turnos, ele desmaiará.</p>
+                            <p style="margin-bottom: 10px;">Caso o personagem desmaie devido à exaustão, ele deverá consultar um médico para recuperação ou repousar em Treinos de Técnicas (todos os treinos de técnicas da semana devem ser usados para recuperação total, e isso impede de receber quaisquer recompensas dos Treinos de Técnicas; não pode gastar Treinos Acumulados para isso).</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    Gasto por Haki e Akuma no Mi <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <ul style="margin-left: 20px; margin-bottom: 15px;">
+                        <li style="margin-bottom: 15px;"><strong>Haki:</strong> O uso contínuo de Haki exige maior esforço dependendo da técnica. Verifique a descrição de cada Haki na página correspondente para os valores exatos.</li>
+                        <li style="margin-bottom: 15px;"><strong>Akuma no Mi:</strong> Obviamente caso tenha e use uma Akuma no Mi pra atacar ou para auxiliar em um ataque ela contará na soma de Estamina gasta por dano.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="title-quantico toggle-title rank-title">
+                    Calculadora de Estamina <span class="toggle-icon">▼</span>
+                </h2>
+                <div class="toggle-content rank-box">
+                    <div class="calc-grid">
+                        <div class="calc-input-group">
+                            <label>Resistência Total:</label>
+                            <input type="text" id="calc-res" class="auto-calc" placeholder="Ex: 10.500">
+                        </div>
+                        <div class="calc-input-group">
+                            <label>Buff Utilizado (%):</label>
+                            <input type="text" id="calc-buff" class="auto-calc" placeholder="Ex: 30">
+                        </div>
+                        <div class="calc-input-group">
+                            <label>Velocidade Total do Movimento:</label>
+                            <input type="text" id="calc-vel" class="auto-calc" placeholder="Ex: 12.600">
+                        </div>
+                        <div class="calc-input-group">
+                            <label>Dano Total Causado:</label>
+                            <input type="text" id="calc-dano" class="auto-calc" placeholder="Ex: 7.000">
+                        </div>
+                        <div class="calc-input-group">
+                            <label>Haki do Armamento:</label>
+                            <select id="calc-haki-arm-select" class="auto-calc" style="width: 100%; padding: 12px; border-radius: 8px; border: 2px solid var(--sidebar-border); background: var(--sidebar-bg); color: inherit; font-family: 'Quantico', sans-serif; font-size: 16px; outline: none; cursor: pointer; appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23b0bec5%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095a17.6%2017.6%200%200%200%205.5-12.8c0-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 15px top 50%; background-size: 12px auto;">
+                                <option value="nenhum">Nenhum</option>
+                                <option value="invisivel">Invisível (+5%)</option>
+                                <option value="visivel">Visível (+10%)</option>
+                                <option value="emissao">Emissão (+25%)</option>
+                                <option value="avancado">Avançado (+50%)</option>
+                                <option value="fullbody">Full Body (+75%)</option>
+                            </select>
+                        </div>
+                        <div class="calc-input-group" style="position: relative;">
+                            <label>Haki da Observação:</label>
+                            <select id="calc-haki-obs-select" class="auto-calc" style="width: 100%; padding: 12px; border-radius: 8px; border: 2px solid var(--sidebar-border); background: var(--sidebar-bg); color: inherit; font-family: 'Quantico', sans-serif; font-size: 16px; outline: none; cursor: pointer; appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23b0bec5%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095a17.6%2017.6%200%200%200%205.5-12.8c0-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 15px top 50%; background-size: 12px auto;">
+                                <option value="nenhum">Nenhum</option>
+                                <option value="basica">Básica (1 por metro)</option>
+                                <option value="intencao">Intenção (Fixo: 500)</option>
+                                <option value="premonicao">Premonição (Fixo: 750)</option>
+                                <option value="avancado">Avançado (+50%)</option>
+                            </select>
+                            <input type="text" id="calc-haki-obs-metros" class="auto-calc" placeholder="Distância (Metros)" style="display: none; margin-top: 10px; width: 100%; padding: 12px; border-radius: 8px; border: 2px solid var(--sidebar-border); background: var(--sidebar-bg); color: inherit; font-family: 'Quantico', sans-serif; font-size: 16px; outline: none;">
+                        </div>
+                        <div class="calc-input-group">
+                            <label>Haki do Rei:</label>
+                            <select id="calc-haki-rei-select" class="auto-calc" style="width: 100%; padding: 12px; border-radius: 8px; border: 2px solid var(--sidebar-border); background: var(--sidebar-bg); color: inherit; font-family: 'Quantico', sans-serif; font-size: 16px; outline: none; cursor: pointer; appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23b0bec5%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095a17.6%2017.6%200%200%200%205.5-12.8c0-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 15px top 50%; background-size: 12px auto;">
+                                <option value="nenhum">Nenhum</option>
+                                <option value="dominacao">Dominação (2% Estamina Máx)</option>
+                                <option value="incapacitacao">Incapacitação (5% Estamina Máx)</option>
+                                <option value="assassinato">Assassinato de Observação (+25%)</option>
+                                <option value="pressao">Pressão (+50%)</option>
+                                <option value="infusao">Infusão (+90%)</option>
+                            </select>
+                        </div>
+                        <div class="calc-input-group">
+                            <label>Redução de Gasto (%):</label>
+                            <input type="text" id="calc-reducao" class="auto-calc" placeholder="Ex: 10">
+                        </div>
+                    </div>
+                    
+                    <hr style="border: 1px solid var(--sidebar-border); margin: 30px 0;">
+                    
+                    <div style="text-align: center; font-size: 18px; line-height: 2;">
+                        <p>Estamina Total: <span id="res-estamina-total" class="highlight-text">0</span></p>
+                        <p>Gasto por Buffs: <span id="res-gasto-buff" style="color: #ff4c4c;">0</span></p>
+                        <p>Gasto por Velocidade: <span id="res-gasto-vel" style="color: #ff4c4c;">0</span></p>
+                        <p>Gasto por Dano: <span id="res-gasto-dano" style="color: #ff4c4c;">0</span></p>
+                        <p>Gasto por Haki: <span id="res-gasto-haki" style="color: #ff4c4c;">0</span></p>
+                        <p>Redução Aplicada: <span id="res-gasto-reducao" style="color: #4caf50;">0</span></p>
+                        
+                        <div style="margin-top: 20px; padding-top: 15px; border-top: 1px dashed var(--sidebar-border);">
+                            <p style="font-size: 22px; font-weight: bold;">Estamina Gasta Total: <span id="res-gasto-total" style="color: #ff4c4c;">0</span></p>
+                            <p style="font-size: 26px; font-weight: bold; margin-top: 10px; color: var(--accent-color);">Estamina Restante: <span id="res-estamina-restante">0</span></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
